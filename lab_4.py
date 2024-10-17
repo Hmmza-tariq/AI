@@ -53,7 +53,7 @@ graph2 = {
     'E': ['A', 'B'],
 }
 
-print("\n\nTask#1")
+print("\n\nTask#2")
 print("DFS Recursive on Graph 1 from node 6:")
 dfs_recursive(graph1, '6')
 print("\nDFS Iterative on Graph 1 from node 6:")
@@ -116,7 +116,7 @@ def post_order(node):
     post_order(node.right)
     print(node.data, end=" ")
 
-print("\n\nTask#2")
+print("\n\nTask#3")
 root1 = tree1()
 print("Pre-Order Traversal for Tree 1:")
 pre_order(root1)
@@ -134,3 +134,38 @@ print("\nPost-Order Traversal for Tree 2:")
 post_order(root2)
 
 
+def create_graph(matrix):
+    rows , cols = len(matrix), len(matrix[0])
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]  
+    graph = {}
+    for r in range(rows):
+        for c in range(cols):
+            key = r * cols + c
+            graph[key] = []
+            for dr, dc in directions:
+                new_r, new_c = r + dr, c + dc
+                if 0 <= new_r < rows and 0 <= new_c < cols:
+                    new_key = new_r * cols + new_c
+                    graph[key].append(new_key)
+    return graph
+
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    print(f"Visiting node {start}: Pixel value = {matrix[start // len(matrix[0])][start % len(matrix[0])]}")
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+
+matrix = [
+    [150, 2, 5],
+    [80, 145, 45],
+    [74, 102, 165]
+]
+
+graph = create_graph(matrix)
+
+print("\n\nTask#4")
+print("DFS traversal from pixel index 0 (value 150):")
+dfs(graph, 0)
