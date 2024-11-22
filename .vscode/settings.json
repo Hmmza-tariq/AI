@@ -3,6 +3,8 @@
         "colours",
         "csvreader",
         "dtype",
-        "popleft"
+        "iloc",
+        "popleft",
+        "rowvar"
     ]
 }
