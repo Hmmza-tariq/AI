@@ -5,6 +5,7 @@
         "dtype",
         "iloc",
         "popleft",
-        "rowvar"
+        "rowvar",
+        "stds"
     ]
 }
