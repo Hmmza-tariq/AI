@@ -84,8 +84,8 @@ def train_iris():
 
     # Network parameters
     input_neurons = X_train.shape[1]
-    hidden_neurons1 = 4
-    hidden_neurons2 = 4
+    hidden_neurons1 = 8
+    hidden_neurons2 = 6
     output_neurons = y_train.shape[1]
     learning_rate = 0.1
     epochs = 10000
