@@ -4,6 +4,7 @@
         "csvreader",
         "dtype",
         "iloc",
+        "keepdims",
         "popleft",
         "rowvar",
         "stds"
